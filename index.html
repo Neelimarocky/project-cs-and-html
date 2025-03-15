@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+      /* ✅ Fixed Navbar */
+.navbar {
+  position: fixed; /* Ensures navbar stays at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color:white;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(4, 4, 4);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Content starts below navbar */
+ body {
+  padding-top: 10px; /* Prevents navbar from covering content */
+  position: relative;
+ }
+
+/* ✅ Prevents accidental dragging */
+
+
+/* ✅ Logo */
+.navbar h1 {
+  font-size: 24px;
+}
+
+.navbar .kcolor {
+  color: orange;
+}
+
+/* ✅ Desktop Navigation */
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+  display: block;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: orange;
+  border-radius: 5px;
+}
+.back{
+  width:100%;
+  height:10%;
+}
+/* ✅ Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f6eeee;
+  min-width: 150px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu div {
+  padding: 10px;
+}
+
+.dropdown-menu a {
+  color: white;
+  display: block;
+  padding: 10px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* ✅ Mobile Styles */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* ✅ Responsive Navigation (2 items per row on mobile) */
+@media screen and (max-width: 768px) {
+  .nav-links {
+      display: none;
+      flex-wrap: wrap; /* ✅ Allows items to wrap */
+      background-color: #f2eded;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 200px;
+      border-radius: 5px;
+      text-align: center;
+      padding: 10px;
+  }
+
+  .nav-links.active {
+      display: flex;
+  }
+
+  .nav-links li {
+      width: 48%; /* ✅ Ensures two items fit in a row */
+      margin-bottom: 10px; /* ✅ Adds spacing between rows */
+  }
+
+  .nav-links a {
+      display: block;
+      padding: 10px;
+      background-color: #f5eeee;
+      color: rgb(23, 22, 22);
+      border-radius: 5px;
+  }
+
+  .nav-links a:hover {
+      background-color: orange;
+  }
+
+  .hamburger {
+      display: block;
+
+}
+}
+        html,body{
+            overflow-x: hidden;
+            width: 100%;
+            scroll-behavior:none;
+        
+        
+        }
+        @media screen and (maxwidth=786px){
+          
+        }
+        .header{
+          display: flex;
+          background-color:black;
+          color: white;
+          justify-content:space-between;
+           align-items: center;
+           overflow: hidden;
+        }
+        .header>ul{
+            text-decoration: none;
+            display: flex;
+            gap: 30px;
+            
+           
+        }
+        ul li{
+            list-style: none;
+
+        }
+        ul li:hover{
+            color: gray;
+
+        }
+        ul li a{
+            text-decoration: none;
+            color: white;
+        }
+        #btn:hover{
+            background-color: goldenrod;
+
+      }
+        
+ 
+          button{
+            border: none;
+            background-color:orange;
+            border-radius: 20px;
+            padding:10px;
+            font-size: medium;
+            color: black;
+         }
+          .ding{
+          text-decoration: underline;
+            color: grey;
+            text-align: center;
+            margin-top:40px;
+         }
+         .pik{
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 50px;
+            margin-left :50px;
+    
+         }
+          .pik1 img{
+            width:100%;
+            height:60vh;
+         } 
+         #col{
+            color:grey;
+            font-size: 2rem;
+         }
+         #col:hover{
+            color: aquamarine;
+         }
+         .span1{
+            display: flex;
+            gap: 10px;
+            margin-top:2%;
+         }
+         .div1{
+            margin-top:3%
+         }
+         .sub{
+            margin-top: 40px;
+            width:100%;
+            height:250px;
+            background-color:rgb(125, 201, 125) ;
+           text-align: center ;
+           align-content: center;
+           top:10%;
+           color:white;
+           margin-bottom: 30px;
+         }
+         input{
+            width:30vw;
+            height: 7vh;
+            border-radius:5cap;
+            border-color: 2px sollid white;
+            
+            
+    
+         }
+         #one{
+            width:8vw;
+            height:8vh;
+            background-color:orange;
+            color:white;
+            border-radius:5cap;
+            position:absolute;
+            margin-left:-7%;
+         }
+         .schedule{
+            display:grid;
+            grid-template-columns: auto auto;
+            grid-template-rows: auto auto auto auto;
+         }
+        .bio{ 
+            display: flex;
+         flex-basis:50%; 
+         margin-top:50px;
+        
+        }
+
+        
+          .bio img{
+            border-radius: 10px 15px;
+             margin-left:5px;
+            width:24.2%;
+            height:60vh;
+
+        
+            
+    
+         }
+         .bio img:hover{
+            transform: rotatex(180deg);
+            transition-duration: 2s;
+          
+         }
+         .bio>bio1{
+            font-size: 30px;
+            text-align: center;
+         }
+         #el1{
+            border: none;
+            background: green;
+            color:white ;
+            border-radius: 20px;
+            padding: 10px;
+         }
+         .main{
+            display: grid;
+            grid-template-columns:auto auto auto;
+            margin-top:50px;
+        
+            margin-left: 3px;
+        
+        
+         }
+         .main img{
+            width: 32vw;
+            height:50vh;
+            border-bottom-right-radius: 100%;
+        
+        }
+        .main2{
+            display: grid;
+            grid-template-columns:auto auto auto;
+            margin-top:50px;
+            margin-left: 3px;
+
+            background-color:#639aa6;    
+        
+         }
+         .main2 img{
+            width: 32vw;
+            height:50vh;
+              border-radius:50%;
+        
+        
+            }
+    
+
+        .footer{
+            display:flex;
+            font-size:30px;
+            background-color: black;
+            justify-content: center;
+            gap: 20px;
+            padding-top: 20px;
+        
+        }
+        .footer1{
+            display: flex;
+            background-color: black;
+            justify-content: center;
+            gap: 20px;
+            padding-top: 20px;
+            font-size: 20px;
+        }
+        #foot:hover{
+            color: white;
+        }
+.item00 {background: url('https://images.pexels.com/photos/977772/pexels-photo-977772.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') no-repeat center center/cover;
+
+  height: 100vh;
+}
+
+
+.item01 {background: url('https://images.pexels.com/photos/607013/pexels-photo-607013.jpeg?auto=compress&cs=tinysrgb&w=600') no-repeat center center/cover;
+height: 100vh;
+}
+    .item02 {background: url('https://images.pexels.com/photos/434551/pexels-photo-434551.jpeg?auto=compress&cs=tinysrgb&w=600') no-repeat center center/cover;
+      height: 100vh;
+    }
+
+    
+    .carousel-caption {
+      top: 43%;
+      padding-top: 0 !important;
+      padding-bottom:0 !important;
+    }
+    #icons{
+        color:white;
+    }
+    .form1{
+      display:flex;
+      justify-content: center;
+      justify-content:space-evenly;
+      gap:10%;
+      margin-top: 2%;
+  
+    }
+    .form2{
+      display:flex;
+      justify-content:space-evenly;
+    
+  }
+  /* Mobile View (Responsive Design) */
+@media (max-width: 768px) {
+  .ding {
+      font-size: 2rem; /* Smaller text for mobile */
+      padding: 15px;
+  }
+
+  .bio {
+      flex-direction: column;
+      align-items: center;
+  }
+#i{
+  width:50%;
+  height: 30vh;
+}
+  .bio img {
+      width: 33%; /* Limit image width to 80% of the container */
+      margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ding {
+      font-size: 1.5rem; /* Even smaller text for very small screens */
+  }
+
+  .bio img {
+      width: 90%; /* Increase image width to 90% of the container */
+  }
+}
+@media (max-width: 768px) {
+  /* Adjust h1 font size for portfolio header */
+  .ding {
+      font-size: 2.5rem; /* Smaller text for mobile */
+      text-align: center;
+  }
+
+  .pik {
+      display: flex;
+      flex-direction: column; /* Stack the sections vertically */
+      align-items: center;
+      margin-bottom: 20px;
+  }
+
+  .pik1 {
+      width: 100%; /* Make sure the image and content take full width */
+      text-align: center; /* Center the content inside */
+  }
+
+  .pik1 img {
+      width: 90%; /* Make images responsive */
+      height: auto;
+      border-radius: 5%;
+      align-items: center;
+  }
+
+  /* Adjust text and button layout for smaller screens */
+  .pik1 h1 {
+      font-size: 1.8rem;
+      text-align: center;
+  }
+
+  .pik1 span {
+      display: block; /* Stack span elements vertically */
+      text-align: center;
+    
+  }
+
+  .pik1 button {
+      width: 80%; /* Make buttons take more width */
+      
+      padding: 10px;
+      font-size: 1rem;
+  }
+
+  .span1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .span1 button {
+      width: 100%; /* Buttons should be full-width for mobile */
+      margin-bottom: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .sub1 h1 {
+      font-size: 1.5rem; /* Slightly smaller text for tablets */
+  }
+
+  .sub1 input {
+      width: 80%; /* Increase input width */
+  }
+
+  .sub1 button {
+      width: 10%; /* Make button full-width */
+      font-size: 1.1rem; /* Adjust button text size */
+  }
+}
+#one{
+  text-align: center;
+  width:20%;
+  position: relative;
+  right: 48px;
+  padding: 2px;
+}
+@media (max-width: 768px) {
+  .ding {
+      font-size: 2rem; /* Smaller font size for tablets */
+      text-align: center;
+  }
+
+  .main {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+      gap: 8px;
+      margin-left: 40px;
+      align-items: center;
+  }
+  #d{
+    width:40%;
+  }
+  .main img {
+      height: 40vh; /* Adjust image height for tablets */
+  }
+}
+@media (max-width: 768px) {
+  .ding {
+      font-size: 2.5rem; /* Slightly smaller text for tablets */
+      padding: 15px;
+      align-items: center;
+  }
+
+  .main2 {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+      gap: 15px;
+      align-items: center;
+      
+  }
+
+  .main2 img {
+      height: 40vh; /* Adjust image height for tablets */
+      align-items: center;
+      margin-left: 20%;
+  }
+}
+.footer{
+  align-items: center;
+}
+    </style>
+
+</head>
+<body>
+  <div class="navbar">
+    <h1>NATURE VIEWS</h1>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links">
+        <li><a href="" style="color: orange;">Home</a></li>
+        <li><a href="#port" style="color: black;">Menus</a></li>
+          <li><a href="#about" style="color: black;">About</a></li>
+          <li><a href="#booking" style="color: black;">Booking</a></li>
+          <li><a href="#contact" style="color: black;">Contact</a></li>
+          
+    </ul>
+  </div>
+  <div class="back">
+    <img src="https://cdn.pixabay.com/photo/2023/08/21/17/44/flower-8204791_1280.jpg" width="100%%",height="10%">
+
+  </div>
+
+   <script>
+    function toggleMenu() {
+        document.querySelector('.nav-links').classList.toggle('active');
+    }
+
+    function toggleDropdown(event) {
+        event.preventDefault(); 
+        event.currentTarget.parentElement.classList.toggle('active');
+    }</script>
+    <!-- 
+
+    <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active item00">
+            <img>
+            <div class="carousel-caption">
+              <h5>First slide label</h5>
+              <p>Some dark sun is enter into the earth.</p>
+            </div>
+          </div>
+          <div class="carousel-item item01">
+            <img>
+            <div class="carousel-caption">
+                <h5>Second slide label</h5>
+          <p> Pink Rose gaden and looks like beautiful view in nature.</p>
+        </div>
+      </div>
+      <div class="carousel-item item02">
+        <img>
+        <div class="carousel-caption">
+          <h5>Third slide label</h5>
+          <p>Sun lighting and land on earth.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div> -->
+
+    <h1 class="ding" background-color="grey">NIGHT VIEWS</h1>
+        <div class="bio">
+        
+        <img src="https://cdn.pixabay.com/photo/2018/01/12/14/24/night-3078326_1280.jpg" alt="" id="i">
+        
+        <img src="https://media.istockphoto.com/id/1041767292/photo/space-scene-blue-nebula-with-tree-and-land-silhouette-https-nasa3d-arc-nasa-gov-detail.jpg?s=1024x1024&w=is&k=20&c=3GsGMxkW464CUHioKVBSG52WnU6U7f_JRxAGP35zNBM="id="i">
+    
+        
+        <img src="https://media.istockphoto.com/id/1210247082/vector/web.jpg?s=612x612&w=0&k=20&c=ZSfZhtegPVAuosuywefVwLJnXWIIOb-LZ5oQrI0MgiA=" alt="" id="i">
+        <img src="https://media.istockphoto.com/id/496258446/vector/vector-winter-wonderland-night-background.jpg?s=612x612&w=0&k=20&c=Jo2SvGuc1PAy6XFA7FaMmn5iENgNEyWxp7jJMNskj_o=" alt=""id="i">
+      </div>
+      <h1 class="ding" background-color="grey" id="port"><b>PORTFOLIO</b></h1>
+     <div class="pik">
+          <section class="pik1">
+            <img src="./fish.jpg" data-aos="zoom-in-up"  style="border-radius:5%;"> 
+            </section>
+          <section  data-aos="zoom-out-left">
+            <h1 style="line-height:2;color:grey"></h1>
+            <h1 style="font-size:3rem; line-height:1;color:grey">$120<sub><span style="font-size:1rem;">/single copy</span></sub></h1>
+            <span style="font-size: 1rem; line-height:2; color:grey;"><i class="bi bi-arrow-right" id="col"></i>size:normal</span>
+            <span style="font-size: 1rem; line-height:1; color:grey;"><i class="bi bi-arrow-right" id="col"></i>frames</span>
+             <div>
+                <i class="bi bi-shield-check" id="col"></i>
+                <i class="fa-sharp fa-thin fa-tv-retro" id="col"></i>
+                </div>
+            <span class="span1">
+                <button>read more</button>
+                <button>book now</button>
+            </span>
+            </section>
+        </div>
+        <div class="pik">
+          
+            <section class="pik1" data-aos="zoom-in-up">
+              <h1 style="line-height:2;color:grey"></h1>
+              <h1 style="font-size:3rem; line-height:1;color:grey">$120<sub><span style="font-size:1rem;">/single copy</span></sub></h1>
+              <span style="font-size: 1rem; line-height:2; color:grey;"><i class="bi bi-arrow-right" id="col"></i>size:normal</span>
+              <span style="font-size: 1rem; line-height:1; color:grey;"><i class="bi bi-arrow-right" id="col"></i>frames</span>
+               <div>
+                  <i class="bi bi-shield-check" id="col"></i>
+                  <i class="fa-sharp fa-thin fa-tv-retro" id="col"></i>
+                  </div>
+              <span class="span1">
+                  <button>read more</button>
+                  <button>book now</button>
+              </span>
+              </section>
+              <section class="pik1">
+                <img src="./ocean.jpg" data-aos="zoom-out-left"  style="border-radius:5%; width:fit-content;"> 
+              </section>
+              
+          </div>
+          <div class="pik">
+            <section class="pik1">
+              <img src="./sun.jpg" data-aos="zoom-in-up"  style="border-radius:5%;" width="50vw"> 
+            </section>
+            <section class="pik1" data-aos="zoom-out-left">
+              <h1 style="line-height:2;color:grey"></h1>
+              <h1 style="font-size:3rem; line-height:1;color:grey">$120<sub><span style="font-size:1rem;">/single copy</span></sub></h1>
+              <span style="font-size: 1rem; line-height:2; color:grey;"><i class="bi bi-arrow-right" id="col"></i>size:normal</span>
+              <span style="font-size: 1rem; line-height:1; color:grey;"><i class="bi bi-arrow-right" id="col"></i>frames</span>
+               <div>
+                  <i class="bi bi-shield-check" id="col"></i>
+                  <i class="fa-sharp fa-thin fa-tv-retro" id="col"></i>
+                  </div>
+              <span class="span1">
+                  <button>read more</button>
+                  <button>book now</button>
+              </span>
+              </section>
+          </div>
+        <div class="sub">
+            <div class="sub1">
+                <h1 font-size="20px">Submit your e-mail</h1>
+                <div>
+                    <input type="text" placeholder="Enter your e-mail">
+                    <button id="one">submit</button>
+                    </div>
+                    </div>
+        </div>
+              
+          <h1 class="ding" id="about">Flowers</h1>
+        <section class="main" >
+    
+         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYyUSpU3kL279ei16K3JgL7h86WKKWHXcJIA&s" height="50vh"alt="" data-aos="fade-left">
+         <img src="./f1.jpeg"  height="50vh" alt="" data-aos="fade-right">
+        <img src="./f5.jpeg"  height="50vh"alt="" data-aos="fade-left">
+         <img src="./f6.jpeg" alt="" data-aos="fade-right"> 
+         <img src="https://images.pexels.com/photos/709685/pexels-photo-709685.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" data-aos="fade-left"> 
+         <img src="f8.jpeg" alt="" data-aos="fade-right">
+        <img src="https://images.pexels.com/photos/593655/pexels-photo-593655.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" data-aos="fade-left"> 
+         <img src="./f3.jpeg" alt=""data-aos="fade-right">
+         <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" data-aos="fade-left"> 
+     </section>
+     <div class="sub" id="contact">
+        <div class="sub1">
+            <h1>Click below to call me</h1>
+            <h3>Monday-Friday: 7am to 12am</h3>
+                <h3>Saturday: 5pm to 12am</h3>
+                <h3>Sunday: 9am to 12am</h3>
+            <div>
+                <button id="d">+123456</button>
+                </div>
+                </div>
+    </div>
+    <h1 class="ding">Forest views</h1>
+    <section class="main2">
+         <img src="./one.jpeg" height="50vh"alt="" data-aos="zoom-in" id="rad">
+         <img src="./one1.jpeg"  height="50vh" alt="" data-aos="zoom-out" id="rad">
+        <img src="./two.jpeg"  height="50vh"alt="" data-aos="zoom-in" id="rad">
+         <img src="./three.jpeg" alt="" data-aos="zoom-out" id="rad"> 
+         <img src="./four.jpeg" alt="" data-aos="zoom-in" id="rad"> 
+         <img src="./five.jpeg" alt="" data-aos="zoom-out" id="rad">
+        <img src="/six.jpeg" alt="" data-aos="zoom-in" id="rad"> 
+         <img src="./sev.jpeg" alt=""data-aos="zoom-out" id="rad">
+         <img src="./ei.jpeg" alt="" data-aos="zoom-in" id="rad"> 
+     </section>
+     <h1 style="margin-top:3%; color:grey; text-align:center;" id="booking">Booking</h1>
+     <form action="" method="post">
+      <div class="form1">
+        <label for="first">First name</label>
+        <label for="last">last name</label>
+      </div>
+      <div class="form2">
+        <input type="text" id="first" name="first" style="width:30%; border-radius:5cap; height:40px" placeholder="john"></label>
+        <input type="text" id="last" name="last" style="width:30%; border-radius:5cap; height:40px" placeholder="singh"></label>
+
+      </div>
+      <div class="form1">
+        <label for="first">Mobile</label>
+        <label for="last">E-mail</label>
+        
+      </div>
+      <div class="form2">
+        <input type="text" id="first" name="mobile" style="width:30%; border-radius:5cap; height:40px" placeholder="+91"></label>
+        <input type="text" id="last" name="e-mail" style="width:30%; border-radius:5cap; height:40px" placeholder="kural@gmail.com"></label>
+
+      </div>
+     
+      <div class="form1">
+        <label for="first">check-in</label>
+        <label for="last">check-out</label>
+
+      </div>
+      <div class="form2">
+    
+        <input type="text" id="first" name="check-in" style="width:30%; border-radius:5cap; height:40px" placeholder="input"></label>
+        <input type="text" id="last" name="check-out" style="width:30%; border-radius:5cap; height:40px" placeholder="output"></label>
+      
+       
+      </div>
+       <button style="margin-left:43%; width:20%; margin-top:10px; margin-bottom:10px;">submit</button> 
+    </form>
+    <div class="footer">
+        <div class="img">
+          
+             <i class="fa-brands fa-instagram" id="icons"></i>
+        </div>
+        <div class="img">
+      
+        <i class="fa-brands fa-twitter" id="icons"></i>
+        </div>
+        <div class="img">
+          
+           <i class="fa-brands fa-facebook"id="icons"></i>
+        </div>
+    </div>
+    
+
+    <div class="footer">
+   <p style="color:greenyellow;">powered by Neelimarocky</p>
+    </div>
+
+      
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" cross origin="anonymous"></script>
+
+
+
+
+</body>
+</html>
